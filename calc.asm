@@ -17,7 +17,6 @@ badoperationlen: equ $-badoperation
 
 section .text
 global _start
-
 read_input_number:
     push rbp
     mov rbp, rsp
