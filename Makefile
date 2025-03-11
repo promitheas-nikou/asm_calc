@@ -1,7 +1,7 @@
 all:
-	nasm -felf64 ./calc.asm -o ./calc.o
+	nasm -Ox -felf64 ./calc.asm -o ./calc.o
 #	gcc -Wall -nostartfiles -nodefaultlibs -o ./app ./calc.c
-	ld -N ./calc.o -o ./app
+	ld -Ns ./calc.o -o ./app
 	./app
 
 test:

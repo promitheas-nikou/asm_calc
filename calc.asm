@@ -1,22 +1,23 @@
-section .data
+section .data align=1
 greet: db "Welcome to the my humble calculator, made entirely in assembly!", 10 ;greet text
 greetlen: equ $-greet
 queryprompt: db "What operation would you like to do? (+,-,/,*)"
 querypromptlen: equ $-queryprompt
-buffer: db 1024 dup(0);allocate 1kb buffer
+buffer: db 64 dup(0);allocate 1kb buffer
 bufferlen: equ $-buffer
 byebye: db "See you soon!", 10
 byebyelen: equ $-byebye
 readinput: db "Enter number: "
 readinputlen: equ $-readinput
-bufferstore: db 1024 dup(0)
+bufferstore: db 64 dup(0)
 bufferstorelen: equ $-bufferstore
 badoperation: db "Bad operation specified!", 10
 badoperationlen: equ $-badoperation
 
 
-section .text
+section .text align=1
 global _start
+
 read_input_number:
     push rbp
     mov rbp, rsp
